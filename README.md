@@ -28,7 +28,7 @@ This project uses the "Archie" theme for Hugo. Follow the steps below to set up 
 1. **Start the Hugo server**:
 
     ```bash
-    hugo server
+    hugo server -D
     ```
 
 2. **Access the site**:
