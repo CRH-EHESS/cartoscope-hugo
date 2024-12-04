@@ -1,3 +1,28 @@
+---
+map: {
+        center: [2.35, 48.85],
+        zoom: 10,
+        style: {
+                version: 8,
+                sources: {
+                osm: {
+                        type: "raster",
+                        tiles: ["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"],
+                        tileSize: 512,
+                        attribution: "&copy; OpenStreetMap Contributors",
+                        maxzoom: 19
+                }
+                },
+                layers: [
+                {
+                        id: "osm",
+                        type: "raster",
+                        source: "osm",
+                }
+                ]
+    }
+}
+---
 
 # Cornu consistere duro et coniecta Sparten verba
 

@@ -45,13 +45,19 @@
         {{- partial "disqus.html" . -}}
         {{- end -}}
     </article>
-    <map >
+    <map>
         <div id="map"></div>
     </map>
 </main>
 
 <!-- Compile the js asset with Hugo's pipeline -->
-{{ $mapJS := resources.Get "js/map.js" | js.Build }}
-<script src="{{ $mapJS.RelPermalink }}"></script>
+{{ $mapJS := resources.Get "js/map.js" | js.Build | resources.Minify | resources.Fingerprint }}
+<script src="{{ $mapJS.RelPermalink }}" defer></script>
+<script type="module">
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log(JSON.parse('{{ .Params.map | jsonify }}'))
+        createMap('map', JSON.parse('{{ .Params.map | jsonify }}'));
+    });
+</script>
 
 {{ end }}
