@@ -17,10 +17,10 @@ This project uses the "Archie" theme for Hugo. Follow the steps below to set up 
     cd cartoscope-hugo
     ```
 
-2. **Add the Archie theme as a submodule**:
+2. **Fetch the Archie theme as a Git submodule**:
 
     ```bash
-    git submodule add https://github.com/athul/archie.git themes/archie
+    git submodule update --init --recursive
     ```
 
 ### Running the Hugo Server
