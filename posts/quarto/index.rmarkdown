@@ -1,0 +1,69 @@
+---
+title: Carte d'état-major [Quarto]
+format:  hugo-md
+map: {
+        center: [2.333, 48.85],
+        zoom: 12,
+        style: {
+                version: 8,
+                sources: {
+                osm: {
+                        type: "raster",
+                        tiles: ["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"],
+                        tileSize: 512,
+                        attribution: "&copy; OpenStreetMap Contributors",
+                        maxzoom: 19
+                },
+                etat-major: {
+                        type: "raster",
+                        tiles: ["https://data.geopf.fr/tms/1.0.0/GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40/{z}/{x}/{y}.jpeg"],
+                        tileSize: 512,
+                        attribution: "&copy; OpenStreetMap Contributors",
+                        maxzoom: 19
+                }
+
+                },
+                layers: [
+                {
+                        id: "osm",
+                        type: "raster",
+                        source: "osm",
+                },
+                {
+                        id: "etat-major",
+                        type: "raster",
+                        source: "etat-major",
+                }
+                ]
+    }
+}
+---
+
+
+
+## À propos
+Exemple de rendu d'un fichier Quarto `.qmd`, avec un code R exécutable affichant la carte d'état major (ci-dessous), et l'inclusion d'une vue cartographique plus grande
+dans le panneau de droite à partir du frontmatter (cf. l'article [Hugo](/posts/hugo))
+
+
+
+```{r}
+
+library(dplyr)
+library(leaflet)
+leaflet(width = "100%") %>% 
+  setView(lat = 47, lng = 2.333, zoom = 6) %>% 
+  addWMSTiles(
+    "https://data.geopf.fr/wms-r/wms",
+    layers = "GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40",
+    options = WMSTileOptions(
+      format = "image/png",
+      transparent = TRUE,
+      version = "1.3.0"
+    ),
+    attribution = "IGN",
+    group = "Carte d'état-major"
+  ) 
+
+```
+

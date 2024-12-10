@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html><head lang="en">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Carte d&#39;état-major [Quarto] - Cartoscope</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="
+
+
+
+
+
+
+
+
+À propos
+Exemple de rendu d&rsquo;un fichier Quarto .qmd, avec un code R exécutable affichant la carte d&rsquo;état major (ci-dessous), et l&rsquo;inclusion d&rsquo;une vue cartographique plus grande
+dans le panneau de droite à partir du frontmatter (cf. l&rsquo;article Hugo)
+
+Code
+library(dplyr)
+library(leaflet)
+leaflet(width = &#34;100%&#34;) %&gt;% 
+  setView(lat = 47, lng = 2.333, zoom = 6) %&gt;% 
+  addWMSTiles(
+    &#34;https://data.geopf.fr/wms-r/wms&#34;,
+    layers = &#34;GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40&#34;,
+    options = WMSTileOptions(
+      format = &#34;image/png&#34;,
+      transparent = TRUE,
+      version = &#34;1.3.0&#34;
+    ),
+    attribution = &#34;IGN&#34;,
+    group = &#34;Carte d&#39;état-major&#34;
+  ) 
+
+
+" />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="/posts/quarto/">
+  <meta property="og:site_name" content="Cartoscope">
+  <meta property="og:title" content="Carte d&#39;état-major [Quarto]">
+  <meta property="og:description" content="À propos Exemple de rendu d’un fichier Quarto .qmd, avec un code R exécutable affichant la carte d’état major (ci-dessous), et l’inclusion d’une vue cartographique plus grande dans le panneau de droite à partir du frontmatter (cf. l’article Hugo)
+Code library(dplyr) library(leaflet) leaflet(width = &#34;100%&#34;) %&gt;% setView(lat = 47, lng = 2.333, zoom = 6) %&gt;% addWMSTiles( &#34;https://data.geopf.fr/wms-r/wms&#34;, layers = &#34;GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40&#34;, options = WMSTileOptions( format = &#34;image/png&#34;, transparent = TRUE, version = &#34;1.3.0&#34; ), attribution = &#34;IGN&#34;, group = &#34;Carte d&#39;état-major&#34; )">
+  <meta property="og:locale" content="fr_fr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Carte d&#39;état-major [Quarto]">
+  <meta name="twitter:description" content="À propos Exemple de rendu d’un fichier Quarto .qmd, avec un code R exécutable affichant la carte d’état major (ci-dessous), et l’inclusion d’une vue cartographique plus grande dans le panneau de droite à partir du frontmatter (cf. l’article Hugo)
+Code library(dplyr) library(leaflet) leaflet(width = &#34;100%&#34;) %&gt;% setView(lat = 47, lng = 2.333, zoom = 6) %&gt;% addWMSTiles( &#34;https://data.geopf.fr/wms-r/wms&#34;, layers = &#34;GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40&#34;, options = WMSTileOptions( format = &#34;image/png&#34;, transparent = TRUE, version = &#34;1.3.0&#34; ), attribution = &#34;IGN&#34;, group = &#34;Carte d&#39;état-major&#34; )">
+
+	
+        <link href="/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.f061c2685750b3af00dfd258265d094ae88de04e55c606460f0001da754d31a8.css" />
+
+	
+	
+
+	
+	
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
+
+    
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="/">Cartoscope</a>
+	</div>
+	<nav>
+		
+		
+	</nav>
+</header>
+
+<main>
+    <article>
+        <div class="title">
+            <h1 class="title">Carte d&#39;état-major [Quarto]</h1>
+            <div class="meta">Posted on Jan 1, 1</div>
+        </div>
+        
+
+        
+
+        <section class="body">
+            <script src="index_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="index_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="index_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="index_files/libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="index_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="index_files/libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="index_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="index_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="index_files/libs/leaflet-binding-2.2.2/leaflet.js"></script>
+<h2 id="à-propos">À propos</h2>
+<p>Exemple de rendu d&rsquo;un fichier Quarto <code>.qmd</code>, avec un code R exécutable affichant la carte d&rsquo;état major (ci-dessous), et l&rsquo;inclusion d&rsquo;une vue cartographique plus grande
+dans le panneau de droite à partir du frontmatter (cf. l&rsquo;article <a href="../../../posts/hugo">Hugo</a>)</p>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(dplyr)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(leaflet)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">leaflet</span>(width <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;100%&#34;</span>) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">setView</span>(lat <span style="color:#f92672">=</span> <span style="color:#ae81ff">47</span>, lng <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.333</span>, zoom <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">addWMSTiles</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;https://data.geopf.fr/wms-r/wms&#34;</span>,
+</span></span><span style="display:flex;"><span>    layers <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40&#34;</span>,
+</span></span><span style="display:flex;"><span>    options <span style="color:#f92672">=</span> <span style="color:#a6e22e">WMSTileOptions</span>(
+</span></span><span style="display:flex;"><span>      format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;image/png&#34;</span>,
+</span></span><span style="display:flex;"><span>      transparent <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+</span></span><span style="display:flex;"><span>      version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.3.0&#34;</span>
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>    attribution <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;IGN&#34;</span>,
+</span></span><span style="display:flex;"><span>    group <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Carte d&#39;état-major&#34;</span>
+</span></span><span style="display:flex;"><span>  ) 
+</span></span></code></pre></div></details>
+<div id="htmlwidget-0f3aecf38319c7ea4f20" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0f3aecf38319c7ea4f20">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[47,2.333],6,[]],"calls":[{"method":"addWMSTiles","args":["https://data.geopf.fr/wms-r/wms",null,"Carte d'état-major",{"styles":"","format":"image/png","transparent":true,"version":"1.3.0","attribution":"IGN","layers":"GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40"}]}]},"evals":[],"jsHooks":[]}</script>
+
+        </section>
+
+        <div class="post-tags">
+            
+            
+            
+        </div>
+        </article>
+    <map>
+        <div id="map"></div>
+    </map>
+</main>
+
+
+
+<script src="/js/map.min.5326220d1b1d145cac4b58f8f6ded86c89ab5a65e92088da220bf97204046811.js" defer></script>
+<script type="module">
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log(JSON.parse('{\u0022center\u0022:[2.333,48.85],\u0022style\u0022:{\u0022layers\u0022:[{\u0022id\u0022:\u0022osm\u0022,\u0022source\u0022:\u0022osm\u0022,\u0022type\u0022:\u0022raster\u0022},{\u0022id\u0022:\u0022etat-major\u0022,\u0022source\u0022:\u0022etat-major\u0022,\u0022type\u0022:\u0022raster\u0022}],\u0022sources\u0022:{\u0022etat-major\u0022:{\u0022attribution\u0022:\u0022\\u0026copy; OpenStreetMap Contributors\u0022,\u0022maxzoom\u0022:19,\u0022tiles\u0022:[\u0022https:\/\/data.geopf.fr\/tms\/1.0.0\/GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40\/{z}\/{x}\/{y}.jpeg\u0022],\u0022tilesize\u0022:512,\u0022type\u0022:\u0022raster\u0022},\u0022osm\u0022:{\u0022attribution\u0022:\u0022\\u0026copy; OpenStreetMap Contributors\u0022,\u0022maxzoom\u0022:19,\u0022tiles\u0022:[\u0022https:\/\/a.tile.openstreetmap.org\/{z}\/{x}\/{y}.png\u0022],\u0022tilesize\u0022:512,\u0022type\u0022:\u0022raster\u0022}},\u0022version\u0022:8},\u0022zoom\u0022:12}'))
+        createMap('map', JSON.parse('{\u0022center\u0022:[2.333,48.85],\u0022style\u0022:{\u0022layers\u0022:[{\u0022id\u0022:\u0022osm\u0022,\u0022source\u0022:\u0022osm\u0022,\u0022type\u0022:\u0022raster\u0022},{\u0022id\u0022:\u0022etat-major\u0022,\u0022source\u0022:\u0022etat-major\u0022,\u0022type\u0022:\u0022raster\u0022}],\u0022sources\u0022:{\u0022etat-major\u0022:{\u0022attribution\u0022:\u0022\\u0026copy; OpenStreetMap Contributors\u0022,\u0022maxzoom\u0022:19,\u0022tiles\u0022:[\u0022https:\/\/data.geopf.fr\/tms\/1.0.0\/GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40\/{z}\/{x}\/{y}.jpeg\u0022],\u0022tilesize\u0022:512,\u0022type\u0022:\u0022raster\u0022},\u0022osm\u0022:{\u0022attribution\u0022:\u0022\\u0026copy; OpenStreetMap Contributors\u0022,\u0022maxzoom\u0022:19,\u0022tiles\u0022:[\u0022https:\/\/a.tile.openstreetmap.org\/{z}\/{x}\/{y}.png\u0022],\u0022tilesize\u0022:512,\u0022type\u0022:\u0022raster\u0022}},\u0022version\u0022:8},\u0022zoom\u0022:12}'));
+    });
+</script>
+
+<div id="fastSearch">
+    <input id="searchInput" tabindex="0">
+    <ul id="searchResults">
+    </ul>
+</div>
+<script src="/js/fuse.js"></script> 
+<script src="/js/fastsearch.js"></script><footer>
+  <div style="display:flex"></div>
+  <div class="footer-info">
+    2024  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+
+</div>
+    </body>
+</html>
