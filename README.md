@@ -1,5 +1,7 @@
 # Cartoscope - Hugo edition
 
+**Demo : https://crh-ehess.github.io/cartoscope-hugo** (but the Quarto+Leaflet is broken on Github Pages 😥)
+
 ## Project Setup
 
 This project uses the "Archie" theme for Hugo. Follow the steps below to set up the theme and run the Hugo server.
@@ -32,13 +34,13 @@ This project uses the "Archie" theme for Hugo. Follow the steps below to set up 
 ### Run the website in preview mode
 
 ```bash
-quarto preview
+quarto render && hugo server -D
 ```
 
-Access the site to the index page `http://localhost:1313/`, or one of the two available articles:
+Access the site to the index page `http://localhost:1313/cartoscope-hugo/`, or one of the two available articles:
 
-- `http://localhost:1313/posts/quarto/`
-- `http://localhost:1313/posts/hugo/`
+- `http://localhost:1313/cartoscope-hugo/posts/quarto/`
+- `http://localhost:1313/cartoscope-hugo/posts/hugo/`
 
 ### Additional Resources
 

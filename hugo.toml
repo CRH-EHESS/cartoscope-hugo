@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://crh-ehess.github.io/cartoscope-hugo'
 #uglyURLs = true
 #relativeURLs = true
 languageCode = 'fr-fr'
