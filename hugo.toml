@@ -1,10 +1,16 @@
-baseURL = '/' 
-uglyURLs = true
-relativeURLs = true
+baseURL = '/'
+#uglyURLs = true
+#relativeURLs = true
 languageCode = 'fr-fr'
 title = 'Cartoscope'
 theme = 'archie'
 
+ignoreFiles = ["\\.qmd$", "\\.ipynb$", "\\.py$"]
+
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
+
+[markup.goldmark.renderer]
+unsafe = true
+

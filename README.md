@@ -6,9 +6,9 @@ This project uses the "Archie" theme for Hugo. Follow the steps below to set up 
 
 ### Prerequisites
 
-- Ensure you have [Hugo](https://gohugo.io/getting-started/installing/) installed on your machine.
+- Ensure you have [Hugo](https://gohugo.io/getting-started/installing/) and [Quarto](https://quarto.org/) installed on your machine.
 
-### Adding the Archie Theme
+### Add the Archie Theme as a Git submodule
 
 1. **Clone the repository**:
 
@@ -23,16 +23,22 @@ This project uses the "Archie" theme for Hugo. Follow the steps below to set up 
     git submodule update --init --recursive
     ```
 
-### Running the Hugo Server
+### Install `maplibre-gl`
 
-1. **Start the Hugo server**:
+```bash
+    npm install
+```
 
-    ```bash
-    hugo server -D
-    ```
+### Run the website in preview mode
 
-2. **Access the site**:
-    Open your browser and navigate to `http://localhost:1313/posts/card/` to see the demo page.
+```bash
+quarto preview
+```
+
+Access the site to the index page `http://localhost:1313/`, or one of the two available articles:
+
+- `http://localhost:1313/posts/quarto/`
+- `http://localhost:1313/posts/hugo/`
 
 ### Additional Resources
 

@@ -267,6 +267,7 @@ map {
     height: 100%;
 }
 
+
 /* Callout */
 .callout {
     background-color: var(--callouctcolor);
@@ -416,6 +417,9 @@ table td {
     padding: 6px 13px;
     border: 1px solid #dfe2e5;
 }
+
+
+
 
 
 /* Fast search */
