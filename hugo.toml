@@ -5,3 +5,6 @@ languageCode = 'fr-fr'
 title = 'Cartoscope'
 theme = 'archie'
 
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]

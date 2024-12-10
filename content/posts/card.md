@@ -22,6 +22,7 @@ map: {
                 ]
     }
 }
+title: "Une carte wowow !"
 ---
 
 # Cornu consistere duro et coniecta Sparten verba
