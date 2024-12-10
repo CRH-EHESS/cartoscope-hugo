@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Cartoscope</title>
-    <link>https://crh-ehess.github.io/cartoscope-hugo/tags.html</link>
+    <link>https://crh-ehess.github.io/cartoscope-hugo/tags/</link>
     <description>Recent content in Tags on Cartoscope</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>

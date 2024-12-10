@@ -42,6 +42,7 @@ map: {
 
 
 ## À propos
+Giggity !
 Exemple de rendu d'un fichier Quarto `.qmd`, avec un code R exécutable affichant la carte d'état major (ci-dessous), et l'inclusion d'une vue cartographique plus grande
 dans le panneau de droite à partir du frontmatter (cf. l'article [Hugo](/posts/hugo))
 

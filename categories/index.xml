@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Cartoscope</title>
-    <link>https://crh-ehess.github.io/cartoscope-hugo/categories.html</link>
+    <link>https://crh-ehess.github.io/cartoscope-hugo/categories/</link>
     <description>Recent content in Categories on Cartoscope</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
