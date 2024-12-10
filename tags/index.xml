@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Cartoscope</title>
-    <link>/tags/</link>
+    <link>https://crh-ehess.github.io/cartoscope-hugo/tags.html</link>
     <description>Recent content in Tags on Cartoscope</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://crh-ehess.github.io/cartoscope-hugo/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

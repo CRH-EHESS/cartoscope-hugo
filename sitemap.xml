@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/posts/quarto/</loc>
+    <loc>https://crh-ehess.github.io/cartoscope-hugo/posts/quarto.html</loc>
   </url><url>
-    <loc>/</loc>
+    <loc>https://crh-ehess.github.io/cartoscope-hugo/</loc>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://crh-ehess.github.io/cartoscope-hugo/categories.html</loc>
   </url><url>
-    <loc>/posts/hugo/</loc>
+    <loc>https://crh-ehess.github.io/cartoscope-hugo/posts/hugo.html</loc>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://crh-ehess.github.io/cartoscope-hugo/posts.html</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://crh-ehess.github.io/cartoscope-hugo/tags.html</loc>
   </url>
 </urlset>
