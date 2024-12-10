@@ -37,6 +37,10 @@ jobs:
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Quarto CLI
+        run: |
+          wget -O ${{ runner.temp }}/quarto.deb https://github.com/quarto-dev/quarto-cli/releases/download/v1.6.39/quarto-1.6.39-linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/quarto.deb
       - name: Install Dart Sass
         run: sudo snap install dart-sass
       - name: Checkout
@@ -53,6 +57,8 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
+          quarto render \
+          && \
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
@@ -68,7 +74,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
-    steps:
+    steps:  
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
