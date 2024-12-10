@@ -1,4 +1,6 @@
-var fuse; // holds our search engine
+import Fuse from 'fuse.js'
+import * as params from '@params';
+
 var searchVisible = false;
 var firstRun = true; // allow us to delay loading json data unless search activated
 var list = document.getElementById('searchResults'); // targets the <ul>
@@ -17,6 +19,7 @@ document.addEventListener('keydown', function (event) {
         // Load json search index if first time invoking search
         // Means we don't load json unless searches are going to happen; keep user payload small unless needed
         if (firstRun) {
+            console.log('Let\'s goooooooooooooo');
             loadSearch(); // loads our json data and builds fuse.js search index
             firstRun = false; // let's never do this again
         }
@@ -97,7 +100,7 @@ function fetchJSONFile(path, callback) {
 // on first call of search box (CMD-/)
 //
 function loadSearch() {
-    fetchJSONFile('/index.json', function (data) {
+    fetchJSONFile(params.baseUrl +'/index.json', function (data) {
 
         var options = { // fuse.js options; check fuse.js website for details
             shouldSort: true,
@@ -113,7 +116,6 @@ function loadSearch() {
         };
 
         fuse = new Fuse(data, options); // build the index from the json file
-
     });
 }
 

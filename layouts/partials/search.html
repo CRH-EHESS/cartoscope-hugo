@@ -3,5 +3,7 @@
     <ul id="searchResults">
     </ul>
 </div>
-<script src="/js/fuse.js"></script> <!-- download and copy over fuse.js file from fusejs.io -->
-<script src="/js/fastsearch.js"></script>
+
+<!-- Compile the js asset with Hugo's pipeline -->
+{{ $fastsearch := resources.Get "js/fastsearch.js" | js.Build  (dict "params" (dict "baseUrl"  .Site.BaseURL ))  | resources.Minify | resources.Fingerprint  }}
+<script src="{{ $fastsearch.RelPermalink }}" defer></script>
